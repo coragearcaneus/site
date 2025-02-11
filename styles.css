@@ -1,0 +1,226 @@
+/* Reset e configurações globais */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #000;
+  color: #fff;
+  line-height: 1.6;
+}
+
+/* Cabeçalho e Menu */
+header {
+  background-color: #FF8C00; /* Laranja queimado */
+  padding: 10px 20px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.site-title {
+  font-size: 1.8rem;
+}
+
+/* Botão de Menu Hamburger */
+.menu-toggle {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 1.8rem;
+  cursor: pointer;
+  display: none;  /* Exibido apenas em telas menores */
+}
+
+/* Navegação Principal */
+.nav-menu ul {
+  list-style: none;
+  display: flex;
+  gap: 15px;
+}
+
+.nav-menu ul li a {
+  color: #fff;
+  text-decoration: none;
+  padding: 8px 12px;
+  transition: background 0.3s;
+}
+
+.nav-menu ul li a:hover {
+  background-color: #fff;
+  color: #FF8C00; /* Laranja queimado */
+  border-radius: 5px;
+}
+
+/* Seções Gerais */
+.section-content {
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.section-content h2 {
+  margin-bottom: 20px;
+  font-size: 2rem;
+}
+
+/* Caixas de Informação e Listas */
+.info-box {
+  background-color: #222;
+  padding: 20px;
+  margin: 20px auto;
+  max-width: 600px;
+  border-radius: 10px;
+  text-align: left;
+}
+
+.lista-info {
+  list-style: none;
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.lista-info li {
+  background: #222;
+  margin: 10px 0;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+/* Galeria de Fotos */
+.gallery-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+}
+
+.gallery-container .photo-item {
+  width: 200px;
+  height: 200px;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.gallery-container .photo-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s;
+}
+
+.gallery-container .photo-item img:hover {
+  transform: scale(1.1);
+}
+
+/* Carrossel de Status */
+.carousel-container {
+  position: relative;
+  max-width: 500px;
+  margin: 0 auto;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.carousel {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.carousel .slide {
+  min-width: 500px;
+  height: 300px;
+  overflow: hidden;
+  position: relative;
+}
+
+.carousel .slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Legenda do Slide */
+.carousel .caption {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  background: rgba(0,0,0,0.6);
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 0.9rem;
+}
+
+/* Botões do Carrossel */
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(255,255,255,0.7);
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 50%;
+  font-size: 1.2rem;
+}
+
+.carousel-btn:hover {
+  background-color: rgba(255,255,255,0.9);
+}
+
+.prev {
+  left: 10px;
+}
+
+.next {
+  right: 10px;
+}
+
+/* Rodapé */
+footer {
+  background-color: #FF8C00; /* Laranja queimado */
+  padding: 10px;
+  text-align: center;
+  margin-top: 20px;
+  font-size: 0.9rem;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+  .nav-menu {
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background-color: #FF8C00; /* Laranja queimado */
+    display: none;
+    flex-direction: column;
+  }
+  .nav-menu.active {
+    display: flex;
+  }
+  .nav-menu ul {
+    flex-direction: column;
+    gap: 0;
+  }
+  .nav-menu ul li a {
+    padding: 15px;
+    border-top: 1px solid rgba(255,255,255,0.2);
+  }
+  /* Ajusta o carrossel para telas menores */
+  .carousel .slide, .carousel-container {
+    min-width: 100%;
+  }
+}
